@@ -10,9 +10,9 @@ class RoomChannel < ApplicationCable::Channel
     logger.info('Отсоединился в файле .rb')
   end
 
-  def speak(from_browser)
+  def speak(data)
     #logger.info("ваш текст: #{data.inspect}")
 
-    ActionCable.server.broadcast 'room_channel', from_browser['message']
+    ActionCable.server.broadcast 'room_channel', data['message']
   end
 end

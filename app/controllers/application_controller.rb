@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     
     if @current_user.nil?
       @current_user = User.create
-      cookies.signed[:user_id] = current_user
+      cookies.signed[:user_id] = @current_user.id
     end 
     @current_user
   end  
