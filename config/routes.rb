@@ -3,4 +3,5 @@ Rails.application.routes.draw do
  
   resources :rooms, only: [:create, :index, :show], param: :token
 
+  mount ActionCable.server => '/cable'
  end

@@ -22,5 +22,5 @@ $(function(){
 });
 
 $(document).on("turbolinks:load", function(){
-  console.log("Документ загружен Turbolinks");
+  console.log("Загружен Turbolinks");
 });
