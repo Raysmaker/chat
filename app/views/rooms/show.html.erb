@@ -1,0 +1,11 @@
+<h1>Room Комната <%= @room.id %></h1>
+
+<%= link_to "Leave Покинуть", root_path %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="messages">
+  <div class="messages-inner">
+    <%= render @room.messages %>
+  </div>
+</div>
