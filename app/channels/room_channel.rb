@@ -1,18 +1,18 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
-    logger.info('Присоединился в файле .rb')
-    stream_from "room_channel"
+    logger.info("Подписка на канал, слушать из канала #{params[:roomId]}")
+
+    @room = Room.find(params[:roomId])
+
+    stream_from "room_channel_#{@room.id}"
   end
 
   def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
-    logger.info('Отсоединился в файле .rb')
+    logger.info('Отсоединился в файле. room_channel.rb')
   end
 
   def speak(data)
-    #logger.info("ваш текст: #{data.inspect}")
-
-    ActionCable.server.broadcast 'room_channel', data['message']
+    logger.info('Вещать в канал. sreak room_channel.rb')
+    ActionCable.server.broadcast "room_channel_#{@room.id}", data['message']
   end
 end

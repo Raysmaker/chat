@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.create!
 
-    redirect_to @room, notice: 'Room was successfully created'
+    redirect_to @room, notice: 'Room was successfully created Комната создана!'
   end
 
   private 

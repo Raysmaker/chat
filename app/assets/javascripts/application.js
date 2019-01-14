@@ -18,9 +18,9 @@
 
 
 $(function(){
-  console.log('Документ загружен');
+  console.log('(2) Документ загружен. application.js');
 });
 
 $(document).on("turbolinks:load", function(){
-  console.log("Загружен Turbolinks");
+  console.log("(1) Загружен Turbolinks. application.js");
 });
